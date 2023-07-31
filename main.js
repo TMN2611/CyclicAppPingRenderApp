@@ -7,7 +7,7 @@ const apiUrl = 'https://qanasneaker.online';
 
 const PORT = process.env.PORT || 5000;
 
-const reqestAfterMinutes = 10;
+const reqestAfterMinutes = 1;
 
 const reqestAfterMiliSeconds = reqestAfterMinutes * 60 * 1000;
 console.log("🚀 ~ file: main.js:13 ~ reqestAfterMiliSeconds:", reqestAfterMiliSeconds)
@@ -35,5 +35,7 @@ app.listen(PORT,()=> {
     setInterval(()=> {
       console.log("Working...")
     },1000)
-    setInterval(CallToQanaSneaker,reqestAfterMiliSeconds) 
+
+    
+     setInterval(CallToQanaSneaker,reqestAfterMiliSeconds) ;
 });
