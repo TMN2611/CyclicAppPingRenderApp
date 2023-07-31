@@ -32,9 +32,7 @@ function CallToQanaSneaker () {
 
 app.listen(PORT,()=> {
     console.log(`listening on port: ${PORT}`);
-    setInterval(()=> {
-      console.log("Working...")
-    },1000)
+
 
     
      setInterval(CallToQanaSneaker,reqestAfterMiliSeconds) ;
