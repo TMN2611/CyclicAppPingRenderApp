@@ -7,14 +7,13 @@ const apiUrl = 'https://qanasneaker.online';
 
 const PORT = process.env.PORT || 5000;
 
-const reqestAfterMinutes = 1;
+const reqestAfterMinutes = 10;
 
-// const reqestAfterMiliSeconds = reqestAfterMinutes * 60 * 1000;
-const reqestAfterMiliSeconds = 1000;
+const reqestAfterMiliSeconds = reqestAfterMinutes * 60 * 1000;
 console.log("🚀 ~ file: main.js:13 ~ reqestAfterMiliSeconds:", reqestAfterMiliSeconds)
 
 app.get('/', function(req, res){
-    res.json({message:"Hello, from backend"});
+    res.json({message:`Hello, from backend: ${Math.random()}`});
 })
 
 function CallToQanaSneaker () {
