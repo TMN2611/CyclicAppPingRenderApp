@@ -7,9 +7,10 @@ const apiUrl = 'https://qanasneaker.online';
 
 const PORT = process.env.PORT || 5000;
 
-const reqestAfterMinutes = 14;
+const reqestAfterMinutes = 1;
 
-const reqestAfterMiliSeconds = reqestAfterMinutes * 60 * 1000;
+// const reqestAfterMiliSeconds = reqestAfterMinutes * 60 * 1000;
+const reqestAfterMiliSeconds = 1000;
 console.log("🚀 ~ file: main.js:13 ~ reqestAfterMiliSeconds:", reqestAfterMiliSeconds)
 
 app.get('/', function(req, res){
@@ -21,7 +22,7 @@ function CallToQanaSneaker () {
     axios.get(apiUrl)
     .then(response => {
       // Handle the response data
-      console.log(response.status);
+      console.log(`Đã gọi đến qana sneaker: ${response.status}`);
     })
     .catch(error => {
       // Handle errors
@@ -32,5 +33,8 @@ function CallToQanaSneaker () {
 
 app.listen(PORT,()=> {
     console.log(`listening on port: ${PORT}`);
+    setInterval(()=> {
+      console.log("Working...")
+    },1000)
     setInterval(CallToQanaSneaker,reqestAfterMiliSeconds) 
 });
